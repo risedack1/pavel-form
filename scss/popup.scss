@@ -125,6 +125,9 @@ body {
     &__logo {
         display: inline-block;
         margin-top: 8px;
+        width: 72px;
+        height: 24px;
+        object-fit: contain;
     }
 
     &__bold {
@@ -204,16 +207,15 @@ body {
         outline: transparent;
         resize: none;
 
+        &:focus::placeholder {
+            font-size: 0;
+        }
+
         &::placeholder {
             font-family: 'Inter', sans-serif;
             font-size: 10px;
             font-weight: 500;
             color: #1a1a1a;
-            font-size: 12px;
-        }
-
-        &:focus::placeholder {
-            font-size: 0;
         }
     }
 
