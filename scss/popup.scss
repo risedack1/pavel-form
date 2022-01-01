@@ -1,0 +1,306 @@
+body {
+    background-color: #f0f0f0;
+}
+
+.popup-main {
+    box-sizing: border-box;
+    position: fixed;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+
+    &__inner {
+        max-width: 655px;
+        width: 100%;
+        opacity: 0;
+        visibility: hidden;
+        border: 2px solid #f25448;
+        font-family: 'Roboto', sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.1;
+        color: #000;
+        padding: 25px 84px 50px 15px;
+        background-color: #fff;
+
+        &--active {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    &__form {
+        position: absolute;
+        bottom: 0;
+        right: 1px;
+        opacity: 0;
+        visibility: visible;
+        transform: translateX(100%);
+    }
+
+    &__close {
+        position: absolute;
+        top: 20px;
+        right: 15px;
+    }
+
+    &__image {
+        display: inline-block;
+        width: 100%;
+        margin-bottom: 21px;
+    }
+
+    &__content {
+        h3 {
+            margin: 0;
+            font-weight: 500;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        p:not(:last-child) {
+            margin-bottom: 20px;
+        }
+
+        button {
+            position: relative;
+            display: inline-block;
+            color: currentColor;
+            padding-right: 39px;
+            background-color: transparent;
+            text-decoration: underline;
+            border: none;
+            cursor: pointer;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                right: 0;
+                transform: translateY(-50%);
+                width: 28px;
+                height: 28px;
+                background-image: url('../image/popup-arrow.svg');
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+            }
+        }
+    }
+
+    &__logo {
+        display: inline-block;
+        margin-top: 8px;
+    }
+
+    &__bold {
+        font-weight: 500;
+    }
+
+    &--active {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.popup-form {
+    width: 287px;
+    padding: 12px 24px 36px;
+    background-color: #fff;
+    border: 2px solid #f25448;
+
+    &__close {
+        position: absolute;
+        top: -2px;
+        right: -2px;
+    }
+
+    &__title {
+        font-weight: 500;
+        font-size: 20px;
+        text-align: center;
+        margin-bottom: 16px;
+    }
+
+    &__label {
+        display: block;
+        margin-bottom: 6px;
+        width: 100%;
+
+        span {
+            display: block;
+            font-size: 10px;
+            font-weight: 500;
+            color: #1a1a1a;
+            margin-bottom: 5px;
+        }
+    }
+
+    &__input {
+        box-sizing: border-box;
+        padding: 0 5px;
+        width: 100%;
+        height: 30px;
+        border: 1px solid #949494;
+        border-radius: 3px;                     
+        outline: transparent;
+    }
+
+    &__textarea {
+        box-sizing: border-box;
+        margin-bottom: 22px;
+        padding: 5px;
+        display: block;
+        width: 100%;
+        height: 90px;
+        border: 1px solid #949494;
+        outline: transparent;
+        resize: none;
+    }
+
+    &__button {
+        display: block;
+        margin: 0 auto;
+        min-width: 86px;
+        padding: 5px 18px;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 1.2;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        background-color: #f25448;
+        cursor: pointer;
+    }
+
+    &--active {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.close-button {
+    margin: 0;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: #f25448;
+    cursor: pointer;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+        height: 1px;
+        width: 24px;
+        background-color: #fff;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+        height: 24px;
+        width: 1px;
+        background-color: #fff;
+    }
+
+    &--small {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+.popup {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    visibility: hidden;
+    padding: 30px 10px;
+    width: 100%;
+    height: 100%;
+    transition: visibility 0.8s ease 0s;
+    -webkit-overflow-scrolling: touch;
+
+    &::before {
+        content: "";
+        position: fixed;
+        left: 0;
+        top: 0;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        transition: opacity 0.8s ease 0s;
+    }
+
+    // .popup__content
+    &__content {
+        display: flex;
+        flex: 1 1 auto;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        min-height: 100%;
+    }
+
+    // .popup__body
+    &__body {
+        padding: 50px;
+        width: 100%;
+        max-width: 800px;
+        background-color: #fff;
+        transform: scale(0);
+        transition: all 0.3s ease 0s;
+    }
+
+    // .popup__close
+    &__close {
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 30;
+        width: 15px;
+        height: 15px;
+        background: url("../img/icons/close.svg") 0 0 no-repeat;
+        cursor: pointer;
+    }
+
+    &.show {
+        visibility: visible;
+        overflow: auto;
+
+        &::before {
+            opacity: 1;
+        }
+
+        .popup__body {
+            transform: scale(1);
+        }
+    }
+
+    &._active {
+        visibility: visible;
+        overflow: auto;
+
+        &::before {
+            opacity: 1;
+        }
+
+        .popup__body {
+            transform: scale(1);
+            transition: all 0.3s ease 0.2s;
+        }
+    }
+}

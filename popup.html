@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pavel popup</title>
+    <link rel="stylesheet" href="css/popup.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="popup-main popup-main--active">
+            <form class="popup-form popup-main__form" action="#" method="post">
+                <div class="popup-form__close close-button close-button--small" aria-label="Закрыть форму"></div>
+                <legend class="popup-form__title">
+                    Форма заявки
+                </legend>
+
+                <!-- Hidden Required Fields -->
+                <input type="hidden" name="project_name" value="NB Stock">
+                <input type="hidden" name="admin_email" value="nbstock2@gmail.com">
+                <input type="hidden" name="form_subject" value="Форма заявки">
+                <!-- END Hidden Required Fields -->
+
+                <label class="popup-form__label">
+                    <span>Имя</span>
+                    <input class="popup-form__input" type="text" name="Имя" required>
+                </label>
+                <label class="popup-form__label">
+                    <span>Телефон</span>
+                    <input class="popup-form__input" type="tel" name="Телефон" required>
+                </label>
+                <label class="popup-form__label">
+                    <span>Комментарий по товару</span>
+                    <textarea class="popup-form__textarea" name="Комментарий" required></textarea>
+                </label>
+                <button class="popup-form__button" type="submit">
+                    Отправить
+                </button>
+            </form>
+            <div class="popup-main__inner popup-main__inner--active">
+                <button class="popup-main__close close-button close-button--main" aria-label="Закрыть баннер"></button>
+                <img class="popup-main__image" src="image/popup-top.jpg" alt="Фотот баннера, склад с продукцией">
+                <div class="popup-main__content">
+                    <h3>
+                        Уважаемые клиенты и посетители сайта !
+                    </h3>
+                    <p>
+                        Чтобы получать первыми уведомления о новых поставках, предлагаем вам вступить в нашу группу в
+                        Телеграме, также вы можете оставить ваш телефон для рассылки новостей в Whats app.
+                    </p>
+                    <p>
+                        В данной группе, мы публикуем товары, которые получаем в лимитированном кол-ве, товары которых
+                        нет
+                        на сайте. Также в данной группе, наши клиенты могут написать нам, что из товара им сейчас нужно
+                        и мы
+                        под них ищем нужный товар у себя или на складах наших поставщиков.
+                    </p>
+                    <p>
+                        С нами можно работать как по товару, к примеру: платья, куртки отдельно или товар в миксах ..
+                        также
+                        по брендам. Наша база поставщиков это позволяет.
+                    </p>
+                    <p>
+                        Если вас интересует такая опция, <button class="form-request">пожалуйста заполните данную
+                            форму</button>
+                    </p>
+                    <p class="popup-main__bold">
+                        Хорошего вам дня и успехов в Новом Году !!
+                    </p>
+                    <p>
+                        С уважением
+                    </p>
+                </div>
+                <img class="popup-main__logo" src="image/popup-logo.png" alt="логотип магазина">
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/popup.js"></script>
+</body>
+
+</html>
