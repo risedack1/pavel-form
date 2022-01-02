@@ -11,11 +11,17 @@ if (popup) {
     });
 
     requestButton.addEventListener('click', () => {
-        popupForm.classList.toggle('popup-form--active');
+        popupForm.classList.toggle('popup-main__form--active');
     });
 
     closeButtonForm.addEventListener('click', () => {
-        popupForm.classList.remove('popup-form--active');
+        popupForm.classList.remove('popup-main__form--active');
+    });
+
+    popup.addEventListener('click', () => {
+        if (!popupInner.classList.contains('popup-main__inner--active') && !popupForm.classList.contains('popup-main__form--active')) {
+            popup.classList.add('popup-main--disable');
+        }
     });
 }
 

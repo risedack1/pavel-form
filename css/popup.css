@@ -6,16 +6,31 @@ body {
   position: fixed;
   left: 50%;
   top: 0;
+  animation-name: popup-anim;
+  animation-duration: 1500ms;
+  animation-timing-function: ease-in-out;
   -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
+  transition: top 1s;
+}
+
+.popup-main--disable {
+  top: -100%;
+}
+
+@keyframes popup-anim {
+  from {
+    top: -100%;
+  }
+  to {
+    top: 0;
+  }
 }
 
 .popup-main__inner {
   position: relative;
   max-width: 655px;
   width: 100%;
-  opacity: 0;
-  visibility: hidden;
   border: 2px solid #f25448;
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
@@ -24,11 +39,12 @@ body {
   color: #000;
   padding: 25px 55px 50px 15px;
   background-color: #fff;
+  transform: translateY(-110%);
+  transition: transform 1.5s;
 }
 
 .popup-main__inner--active {
-  opacity: 1;
-  visibility: visible;
+  transform: translateY(0);
 }
 
 @media (max-width: 1200px) {
@@ -52,11 +68,18 @@ body {
 .popup-main__form {
   position: absolute;
   bottom: 0;
-  right: 1px;
+  right: 50%;
   opacity: 0;
-  visibility: visible;
+  visibility: hidden;
   -webkit-transform: translateX(100%);
           transform: translateX(100%);
+  transition: right 1s, opacity 1s, visibility 1s;
+}
+
+.popup-main__form--active {
+  right: 1px;
+  opacity: 1;
+  visibility: visible;
 }
 
 @media (max-width: 992px) {
@@ -293,10 +316,10 @@ body {
   cursor: pointer;
 }
 
-.popup-form--active {
+/* .popup-form--active {
   opacity: 1;
   visibility: visible;
-}
+} */
 
 @media (max-width: 1200px) {
   .popup-form {
